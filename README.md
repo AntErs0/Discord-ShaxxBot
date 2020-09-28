@@ -10,6 +10,14 @@ Lord Shaxx Discord VoIP bot
 A regal Discord bot that represents Lord Shaxx from Destiny - he provides inspirational VoIP messages on demand!
 
 ## Requirements
+
+PiP - https://pypi.org/project/pip/
+
+FFmpeg - https://ffmpeg.org/
+
+
+
+## Setup
 Copy .env.sample to .env and populate with your Discord bot token. `BOT_NAME` becomes the prefix you use to call forth Lord Shaxx.
 
 To create a token; Discord Token - [link](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token)
