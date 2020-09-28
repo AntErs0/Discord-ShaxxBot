@@ -16,8 +16,8 @@ bot = commands.Bot(command_prefix='Shaxx ')
 async def on_ready():
 	print(f'{bot.user} has connected to Discord!')
 
-@bot.command(name='positivo', help='Lord Shaxx è fiero di te',pass_context=True)
-async def positivo(context):
+@bot.command(name='positive', help='Lord Shaxx is pleased with you',pass_context=True)
+async def positive(context):
 	paudiofile = os.listdir('audio/positive/')
 	channel=None
 	channel = context.message.author.voice.channel
@@ -29,10 +29,10 @@ async def positivo(context):
 		voc.stop()
 		await voc.disconnect()
 	else:
-		await context.send('Non sei in un canale vocale!')
+		await context.send("You're not in any voice channel!")
 
-@bot.command(name='negativo', help='Lord Shaxx è deluso',pass_context=True)
-async def negativo(context):
+@bot.command(name='negative', help='Lord Shaxx is disappointed',pass_context=True)
+async def negative(context):
 	paudiofile = os.listdir('audio/negative/')
 	channel=None
 	channel = context.message.author.voice.channel
@@ -44,7 +44,7 @@ async def negativo(context):
 		voc.stop()
 		await voc.disconnect()
 	else:
-		await context.send('Non sei in un canale vocale!')
+		await context.send("You're not in any voice channel!")
 
 @bot.command(name='no', help='Yassss',pass_context=True)
 async def Yasss(context):
@@ -58,6 +58,6 @@ async def Yasss(context):
 		voc.stop()
 		await voc.disconnect()
 	else:
-		await context.send('Non sei in un canale vocale!')
+		await context.send("You're not in any voice channel!")
 
-bot.run('NzU5MDkwOTg3NTYwODYxNjk4.X24ckg.2ucH0GCirkLgT5wpJs-GTDWsnME')
+bot.run('TOKEN')
