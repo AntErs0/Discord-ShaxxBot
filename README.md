@@ -2,7 +2,7 @@
 
 Lord Shaxx png Credit: https://www.deviantart.com/fonteart/art/Lord-Shaxx-567679611
 
-Original, Ruby version of the bot: https://github.com/SinFulNard/discord-shaxxBot
+Original, Ruby version of the bot (OUTDATED) : https://github.com/SinFulNard/discord-shaxxBot
 
 # Discord-ShaxxBot
 
