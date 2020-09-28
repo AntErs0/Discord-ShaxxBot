@@ -16,7 +16,8 @@ async def on_ready():
 
 @bot.command(name='positivo', help='Lord Shaxx è fiero di te',pass_context=True)
 async def positivo(context):
-	audiofile = os.scandir('audio/positive/')
+	paudiofile = os.scandir('audio/positive/')
+	pselectedaudio = random.choice(paudiofile)
 	user=context.message.author
     voice_channel=user.voice.voice_channel
     channel=None
@@ -24,7 +25,7 @@ async def positivo(context):
         channel=voice_channel.name
         await client.say('User is in channel: '+ channel)
         vc= await client.join_voice_channel(voice_channel)
-        player = vc.create_ffmpeg_player('vuvuzela.mp3', after=lambda: print('done'))
+        player = vc.create_ffmpeg_player(pselectedaudio, after=lambda: print('done'))
         player.start()
         while not player.is_done():
             await asyncio.sleep(1)
