@@ -16,7 +16,8 @@ async def on_ready():
 
 @bot.command(name='positivo', help='Lord Shaxx è fiero di te',pass_context=True)
 async def positivo(context):
-    user=context.message.author
+	audiofile = os.scandir('audio/positive/')
+	user=context.message.author
     voice_channel=user.voice.voice_channel
     channel=None
     if voice_channel!= None:
