@@ -1,7 +1,8 @@
-![Lord Shaxx][shaxx]
-Img Credit: https://www.deviantart.com/fonteart/art/Lord-Shaxx-567679611
+# Credits
 
-[shaxx]: https://raw.githubusercontent.com/AntErs0/ShaxxPyITA/master/lord_shaxx_by_fonteart.png
+Lord Shaxx png Credit: https://www.deviantart.com/fonteart/art/Lord-Shaxx-567679611
+
+Original, Ruby version of the bot: https://github.com/SinFulNard/discord-shaxxBot
 
 # discord-shaxxBot
 Lord Shaxx Discord VoIP bot
