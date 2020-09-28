@@ -19,19 +19,19 @@ async def positivo(context):
 	paudiofile = os.scandir('audio/positive/')
 	pselectedaudio = random.choice(paudiofile)
 	user=context.message.author
-    voice_channel=user.voice.voice_channel
-    channel=None
-    if voice_channel!= None:
-        channel=voice_channel.name
-        await client.say('User is in channel: '+ channel)
-        vc= await client.join_voice_channel(voice_channel)
-        player = vc.create_ffmpeg_player(pselectedaudio, after=lambda: print('done'))
-        player.start()
-        while not player.is_done():
-            await asyncio.sleep(1)
-        player.stop()
-        await vc.disconnect()
-    else:
-        await client.say('Non sei in un canale vocale!')
+	voice_channel=user.voice.voice_channel
+	channel=None
+	if voice_channel!= None:
+		channel=voice_channel.name
+		await client.say('User is in channel: '+ channel)
+		vc= await client.join_voice_channel(voice_channel)
+		player = vc.create_ffmpeg_player(pselectedaudio, after=lambda: print('done'))
+		player.start()
+		while not player.is_done():
+			await asyncio.sleep(1)
+			player.stop()
+		await vc.disconnect()
+	else:
+		await client.say('Non sei in un canale vocale!')
 
 bot.run('NzU5MDkwOTg3NTYwODYxNjk4.X24ckg.2ucH0GCirkLgT5wpJs-GTDWsnME')
