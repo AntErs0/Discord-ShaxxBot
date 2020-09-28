@@ -2,6 +2,7 @@
 import os
 import discord
 import random
+import asyncio
 from dotenv import load_dotenv
 from discord import ext
 from discord.ext import commands
@@ -18,20 +19,17 @@ async def on_ready():
 @bot.command(name='positivo', help='Lord Shaxx è fiero di te',pass_context=True)
 async def positivo(context):
 	paudiofile = os.listdir('audio/positive/')
-	pselectedaudio = random.choice(paudiofile)
-	user=context.message.author
-	voice_channel=user.voice.channel
 	channel=None
-	if voice_channel!= None:
-		channel=voice_channel.name
-		await context.send('User is in channel: '+ channel)
-		vc= await channel.connect(voice_channel)
-		player = vc.create_ffmpeg_player(pselectedaudio, after=lambda: print('done'))
-		player.start()
-		while not player.is_done():
+	channel = context.message.author.voice.channel
+	if channel!= None:
+		vc = channel.name
+		await context.send('User is in channel: '+ vc)
+		voc = await channel.connect()
+		voc.play(discord.FFmpegPCMAudio('audio/positive/' + random.choice(paudiofile)), after=lambda e: print('done', e))
+		while voc.is_playing():
 			await asyncio.sleep(1)
-			player.stop()
-		await vc.disconnect()
+			voc.stop()
+		await voc.disconnect()
 	else:
 		await context.send('Non sei in un canale vocale!')
 
