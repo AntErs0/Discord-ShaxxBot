@@ -12,6 +12,14 @@ A regal Discord bot that represents Lord Shaxx from Destiny - he provides inspir
 
 The master branch is the italian version
 
+## Languages
+
+Master branch - Italian
+
+ENG branch - English
+
+Others - Maybe in future, you're free to translate in your language.
+
 ## Dependancies
 
 Python - https://www.python.org/
