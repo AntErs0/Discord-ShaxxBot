@@ -16,14 +16,14 @@ bot = commands.Bot(command_prefix='Shaxx ')
 async def on_ready():
 	print(f'{bot.user} has connected to Discord!')
 
-@bot.command(name='positivo', help='Lord Shaxx è fiero di te',pass_context=True)
+@bot.command(name='vittoria', help='Lord Shaxx è fiero di te',pass_context=True)
 async def positivo(context):
-	paudiofile = os.listdir('audio/positive/')
+	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/vittoria") for file in f]
 	channel=None
 	channel = context.message.author.voice.channel
 	if channel!= None:
 		voc = await channel.connect()
-		voc.play(discord.FFmpegPCMAudio('audio/positive/' + random.choice(paudiofile)), after=lambda e: print('done', e))
+		voc.play(discord.FFmpegPCMAudio(random.choice(paudiofile)), after=lambda e: print('done', e))
 		while voc.is_playing():
 			await asyncio.sleep(1)
 		voc.stop()
@@ -31,14 +31,29 @@ async def positivo(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 
-@bot.command(name='negativo', help='Lord Shaxx è deluso',pass_context=True)
-async def negativo(context):
-	paudiofile = os.listdir('audio/negative/')
+@bot.command(name='sconfitta', help='Lord Shaxx è deluso',pass_context=True)
+async def sconfitta(context):
+	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/sconfitta") for file in f]
 	channel=None
 	channel = context.message.author.voice.channel
 	if channel!= None:
 		voc = await channel.connect()
-		voc.play(discord.FFmpegPCMAudio('audio/negative/' + random.choice(paudiofile)), after=lambda e: print('done', e))
+		voc.play(discord.FFmpegPCMAudio(random.choice(paudiofile)), after=lambda e: print('done', e))
+		while voc.is_playing():
+			await asyncio.sleep(1)
+		voc.stop()
+		await voc.disconnect()
+	else:
+		await context.send('Non sei in un canale vocale!')
+		
+@bot.command(name='parere', help='Lord Shaxx la pensa così',pass_context=True)
+async def sconfitta(context):
+	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/") for file in f]
+	channel=None
+	channel = context.message.author.voice.channel
+	if channel!= None:
+		voc = await channel.connect()
+		voc.play(discord.FFmpegPCMAudio(random.choice(paudiofile)), after=lambda e: print('done', e))
 		while voc.is_playing():
 			await asyncio.sleep(1)
 		voc.stop()
@@ -46,13 +61,13 @@ async def negativo(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 
-@bot.command(name='no', help='Yassss',pass_context=True)
+@bot.command(name='no', help='Si!',pass_context=True)
 async def Yasss(context):
 	channel=None
 	channel = context.message.author.voice.channel
 	if channel!= None:
 		voc = await channel.connect()
-		voc.play(discord.FFmpegPCMAudio('audio/yas.mp3'), after=lambda e: print('done', e))
+		voc.play(discord.FFmpegPCMAudio('audio/Si.ogg'), after=lambda e: print('done', e))
 		while voc.is_playing():
 			await asyncio.sleep(1)
 		voc.stop()
