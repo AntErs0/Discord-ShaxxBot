@@ -27,10 +27,6 @@ async def help(context):
 	embed.add_field(name="no" , value= "Yassss!" , inline=False)
 	await context.send(embed=embed)
 
-@bot.event
-async def on_ready():
-	print(f'{bot.user} has connected to Discord!')
-
 @bot.command(name='positive', help='Lord Shaxx is pleased with you',pass_context=True)
 async def positivo(context):
 	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/positive") for file in f]
