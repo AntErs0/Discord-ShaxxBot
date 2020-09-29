@@ -9,12 +9,23 @@ from discord.ext import commands
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-
-bot = commands.Bot(command_prefix='Shaxx ')
+prefix = os.getenv('COMMAND_PREFIX')
+bot = commands.Bot(command_prefix=prefix)
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
 	print(f'{bot.user} has connected to Discord!')
+	
+@bot.command(name="help" , pass_contex = True)
+async def help(context):    
+	embed = discord.Embed(colour = discord.Colour.from_rgb(255, 0, 0))
+	embed.set_author(name="Richiama Lord Shaxx con \"" + prefix + "\" seguito da uno dei seguenti comandi:")
+	embed.add_field(name="vittoria" , value= "Lord Shaxx è fiero di te" , inline=False)
+	embed.add_field(name="sconfitta" , value= "Lord Shaxx è deluso" , inline=False)
+	embed.add_field(name="parere" , value= "Lord Shaxx la pensa così" , inline=False)
+	embed.add_field(name="no" , value= "SI!" , inline=False)
+	await context.send(embed=embed)
 
 @bot.command(name='vittoria', help='Lord Shaxx è fiero di te',pass_context=True)
 async def positivo(context):
