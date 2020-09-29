@@ -14,7 +14,7 @@ The ENG branch is the english version
 
 ## Languages
 
-Master branch - Italian
+ITA branch - Italian
 
 ENG branch - English
 
