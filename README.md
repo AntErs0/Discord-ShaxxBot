@@ -56,4 +56,4 @@ Google is your friend.
 
 ## Other things
 
-The default commands prefix is 'Shaxx ', you can change it changing "command_prefix=" at line 13 in shaxxbot.py
+The default commands prefix is 'Shaxx ', you can change it changing "COMMAND_PREFIX=" in the .env file
