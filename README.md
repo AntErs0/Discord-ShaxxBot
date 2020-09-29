@@ -10,6 +10,8 @@ Lord Shaxx Discord VoIP bot
 
 A regal Discord bot that represents Lord Shaxx from Destiny - he provides inspirational VoIP messages on demand!
 
+The ENG branch is the english version
+
 ## Languages
 
 Master branch - Italian
