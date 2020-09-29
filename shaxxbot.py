@@ -75,4 +75,4 @@ async def Yasss(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 
-bot.run('NzU5MDkwOTg3NTYwODYxNjk4.X24ckg.2ucH0GCirkLgT5wpJs-GTDWsnME')
+bot.run(os.getenv('DISCORD_TOKEN'))
