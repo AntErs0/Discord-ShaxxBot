@@ -27,7 +27,7 @@ async def help(context):
 	embed.add_field(name="no" , value= "SI!" , inline=False)
 	await context.send(embed=embed)
 
-@bot.command(name='vittoria', help='Lord Shaxx è fiero di te',pass_context=True)
+@bot.command(name='vittoria',pass_context=True)
 async def positivo(context):
 	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/vittoria") for file in f]
 	channel=None
@@ -42,7 +42,7 @@ async def positivo(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 
-@bot.command(name='sconfitta', help='Lord Shaxx è deluso',pass_context=True)
+@bot.command(name='sconfitta',pass_context=True)
 async def sconfitta(context):
 	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/sconfitta") for file in f]
 	channel=None
@@ -57,7 +57,7 @@ async def sconfitta(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 		
-@bot.command(name='parere', help='Lord Shaxx la pensa così',pass_context=True)
+@bot.command(name='parere',pass_context=True)
 async def sconfitta(context):
 	paudiofile = [os.path.join(r,file) for r,d,f in os.walk("audio/") for file in f]
 	channel=None
@@ -72,7 +72,7 @@ async def sconfitta(context):
 	else:
 		await context.send('Non sei in un canale vocale!')
 
-@bot.command(name='no', help='Si!',pass_context=True)
+@bot.command(name='no',pass_context=True)
 async def Yasss(context):
 	channel=None
 	channel = context.message.author.voice.channel
